@@ -2,7 +2,7 @@
 //module
 const express = require("express");
 const app = express();
-
+var path = require('path');
 
 //routing
 const home = require("./src/routes/home");
@@ -25,6 +25,9 @@ app.get("/login", (req,res)=> {
 });
 */
 app.use("/",home ); //enroll middleware
+
+app.use(express.static(path.join(__dirname, '/src/public') ) ); //public/js ... to view/login.js 
+//app.use(express.static(`${__dirname}/src/public`) ); //public/js ... to view/login.js 
 
 // move to bin/www.js
 /*
