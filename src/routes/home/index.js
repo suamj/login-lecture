@@ -19,4 +19,8 @@ router.get("/", ctrl.hello);
 
 router.get("/login", ctrl.login);
 
+router.get("/next" , (req,res)=> {
+    res.send("fisrt");
+});
+
 module.exports = router;
