@@ -3,7 +3,7 @@
 const express = require("express");
 const router = express.Router();
 
-const ctrl = require("./home.ctrl.");
+const ctrl = require("./home.ctrl");
 /*
 router.get("/", (req,res)=> {
     //res.send("ROOT page");
@@ -15,9 +15,9 @@ router.get("/login", (req,res)=> {
 
 });
 */
-router.get("/", ctrl.hello);
-
-router.get("/login", ctrl.login);
+router.get("/", ctrl.output.hello);
+router.get("/login", ctrl.output.login);
+router.post("/login", ctrl.process.login);
 
 router.get("/next" , (req,res)=> {
     res.send("fisrt");

@@ -1,6 +1,7 @@
 "use strict";
 //module
 const express = require("express");
+const bodyParser = require("body-parser");
 const app = express();
 var path = require('path');
 
@@ -24,7 +25,10 @@ app.get("/login", (req,res)=> {
 
 });
 */
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: false }));
 app.use("/",home ); //enroll middleware
+
 
 app.use(express.static(path.join(__dirname, '/src/public') ) ); //public/js ... to view/login.js 
 //app.use(express.static(`${__dirname}/src/public`) ); //public/js ... to view/login.js 
